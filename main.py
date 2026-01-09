@@ -11,10 +11,7 @@ from langchain_core.tools import tool, create_retriever_tool
 from langchain.agents import AgentExecutor, create_tool_calling_agent
 from langchain import hub
 
-# 2. CONFIGURATION
-# Ensure your API key is set
-if "GOOGLE_API_KEY" not in os.environ:
-    os.environ["GOOGLE_API_KEY"] = getpass.getpass("AIzaSyBGoeYZfGNRahmNDQJwrjYS198sJ-s9TYo")
+
 
 class PersonalAssistant:
     def __init__(self, db_path="./chroma_db"):
