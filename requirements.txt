@@ -1,0 +1,28 @@
+langchain>=0.3.0
+langchain-google-genai>=2.0.0
+langchain-openai>=0.2.0
+langchain-groq>=0.2.0
+langchain-community>=0.3.0
+langchain-core>=0.3.0
+langchain-chroma>=0.1.2
+langchainhub>=0.1.21
+langchain-google-community
+google-api-python-client
+ipykernel
+pypdf
+
+
+google-auth-httplib2
+google-auth-oauthlib
+
+# newly added 
+# langchain==1.2.3
+# langchain-core==0.3.0
+# langchain-google-genai==4.1.3
+# langgraph==1.0.2
+# langchain-community==0.3.0
+# langchain-chroma==0.1.2
+# langchain-google-community==3.0.3
+# google-api-python-client==2.120.0
+# pypdf==6.5.0
+# python-dotenv==1.0.1
