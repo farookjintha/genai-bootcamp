@@ -1,1 +1,12 @@
 ipykernel
+python-dotenv
+langchain
+langchain-google-genai
+langchain-google-community
+
+
+# Examples implemented from Learn section of langchain
+pypdf
+langchain-community
+pypdf
+langchain-chroma
