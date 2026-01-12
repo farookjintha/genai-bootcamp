@@ -1,0 +1,125 @@
+{'messages': 
+
+[
+    HumanMessage(
+        content='What is task decomposition?', 
+        additional_kwargs={}, 
+        response_metadata={}, 
+        id='c340fbb4-64c0-4829-80b9-1e14945c01a6'
+        ), 
+
+    AIMessage(
+        content=[], 
+        additional_kwargs={
+            'function_call': 
+                {
+                    'name': 'retrieve_context', 
+                    'arguments': '{
+                        "query": "What is task decomposition?"
+                        }'
+                }, 
+                
+                '__gemini_function_call_thought_signatures__':{
+                    '4ca381d7-0fd1-45c4-a1d6-87bbaf4d2b1f': 'EocECoQEAXLI2nyyCc3skT4higlPmqDhoFxKmueg8ER0HnMR5mUTHK83wvl2G4dTxZ8z70THKrBsWd1Mbu/tgLSgcByKh1+HQAJvTmKImtsObkX09R7g+pz+VV820BKxH/sU68QeekwwQ1viY2cc2RUHJdW1h8QX9qzS2/zITmA1RahD9k8U3aIl86hksjKcKfR4h2ABt7bX1dZ/JjhpyTRrvxppToJhXD5vxs9Tj68Wp2Yy4WnOgprnRwn9SxgEGUpvJRIrivPMLyLiAl6n2aW+PfJuLHPHDRYr0+1KUrsqspiSsOm2iLsOioOyOMI09Cz7sWCQNFlwRVUtzbc3fjlZ9Kkm4u7thyQ6LKciASusOK2YvjSmzLq6nXp9wxeWElWCMlZ/6kfG3MTEb4iFhuwHVK7eu4vs6asORXVvUhGOxaq+kCgPthOHTczZvBhhQSieIp1kG6tOGUzm3knUsR0/+9JmnXc8rMkxoG1VskasQ0WmYodyEIxyAbjG1iLEOFkb6cB1HvQfadjdn+VIvGeiR9mAGgIDrPguhlFnfvpvpK2MvPg/ZK2Iue2SQireed0RHeYdBpN3V1EY7eJiw2BolKppnZs89ue/tXaUL8HcKDSJ+7Ayj+KEDRKHKoZgGtC8Da6rwUZ3qZe94X036gSqdjJ57deAqV0gC1x7+fQbnplGk7D3kcb1'
+                    }
+                },
+
+        response_metadata={
+            'finish_reason': 'STOP', 
+            'model_name': 'gemini-3-flash-preview', 
+            'safety_ratings': [], 
+            'model_provider': 'google_genai'
+            }, 
+            
+        id='lc_run--019bb1a6-9c36-7d00-9f94-2c3d041054b0-0', 
+        tool_calls=[
+            {
+                'name': 'retrieve_context', 
+                'args': {
+                    'query': 'What is task decomposition?'
+                    }, 
+                'id': '4ca381d7-0fd1-45c4-a1d6-87bbaf4d2b1f', 
+                'type': 'tool_call'
+            }
+            ], 
+            
+        invalid_tool_calls=[], 
+        
+        usage_metadata={
+            'input_tokens': 74, 
+            'output_tokens': 120, 
+            'total_tokens': 194, 
+            'input_token_details': {
+                'cache_read': 0
+                },
+            'output_token_details': {
+                'reasoning': 100
+                }
+                }
+    ), 
+    
+    ToolMessage(
+        content=
+        'Source: {\'source\': \'https://lilianweng.github.io/posts/2023-06-23-agent/\'}
+        \nContent: Task decomposition can be done (1) by LLM with simple prompting like "Steps for XYZ.\\n1.", "What are the subgoals for achieving XYZ?", (2) by using task-specific instructions; e.g. "Write a story outline." for writing a novel, or (3) with human inputs.\nAnother quite distinct approach, LLM+P (Liu et al. 2023), involves relying on an external classical planner to do long-horizon planning. This approach utilizes the Planning Domain Definition Language (PDDL) as an intermediate interface to describe the planning problem. In this process, LLM (1) translates the problem into “Problem PDDL”, then (2) requests a classical planner to generate a PDDL plan based on an existing “Domain PDDL”, and finally (3) translates the PDDL plan back into natural language. Essentially, the planning step is outsourced to an external tool, assuming the availability of domain-specific PDDL and a suitable planner which is common in certain robotic setups but not in many other domains.\nSelf-Reflection#\n\n
+        
+        Source: {\'source\': \'https://lilianweng.github.io/posts/2023-06-23-agent/\'}
+        \nContent: Component One: Planning#\nA complicated task usually involves many steps. An agent needs to know what they are and plan ahead.\nTask Decomposition#\nChain of thought (CoT; Wei et al. 2022) has become a standard prompting technique for enhancing model performance on complex tasks. The model is instructed to “think step by step” to utilize more test-time computation to decompose hard tasks into smaller and simpler steps. CoT transforms big tasks into multiple manageable tasks and shed lights into an interpretation of the model’s thinking process.\nTree of Thoughts (Yao et al. 2023) extends CoT by exploring multiple reasoning possibilities at each step. It first decomposes the problem into multiple thought steps and generates multiple thoughts per step, creating a tree structure. The search process can be BFS (breadth-first search) or DFS (depth-first search) with each state evaluated by a classifier (via a prompt) or majority vote.',
+        
+        name='retrieve_context', 
+
+        id='5689f2b4-924d-456b-8ee2-67b3ebee75f8', 
+        
+        tool_call_id='4ca381d7-0fd1-45c4-a1d6-87bbaf4d2b1f', 
+
+        artifact=[
+            Document(
+                id='5d3d5310378f640a8d1da30be71175cc394a7998e64c2879267e59a7f755fc1f', 
+                metadata={
+                    'source': 'https://lilianweng.github.io/posts/2023-06-23-agent/'
+                    },
+                    
+                page_content='Task decomposition can be done (1) by LLM with simple prompting like "Steps for XYZ.\\n1.", "What are the subgoals for achieving XYZ?", (2) by using task-specific instructions; e.g. "Write a story outline." for writing a novel, or (3) with human inputs.\nAnother quite distinct approach, LLM+P (Liu et al. 2023), involves relying on an external classical planner to do long-horizon planning. This approach utilizes the Planning Domain Definition Language (PDDL) as an intermediate interface to describe the planning problem. In this process, LLM (1) translates the problem into “Problem PDDL”, then (2) requests a classical planner to generate a PDDL plan based on an existing “Domain PDDL”, and finally (3) translates the PDDL plan back into natural language. Essentially, the planning step is outsourced to an external tool, assuming the availability of domain-specific PDDL and a suitable planner which is common in certain robotic setups but not in many other domains.\nSelf-Reflection#'),
+            
+            Document(
+                id='266e0f658ca1c65b2d34489ad6a53835547b6488aea290238b53a0e7089b7ef5',               
+                
+                metadata={
+                    'source': 'https://lilianweng.github.io/posts/2023-06-23-agent/'
+                    },
+                    
+                page_content='Component One: Planning#\nA complicated task usually involves many steps. An agent needs to know what they are and plan ahead.\nTask Decomposition#\nChain of thought (CoT; Wei et al. 2022) has become a standard prompting technique for enhancing model performance on complex tasks. The model is instructed to “think step by step” to utilize more test-time computation to decompose hard tasks into smaller and simpler steps. CoT transforms big tasks into multiple manageable tasks and shed lights into an interpretation of the model’s thinking process.\nTree of Thoughts (Yao et al. 2023) extends CoT by exploring multiple reasoning possibilities at each step. It first decomposes the problem into multiple thought steps and generates multiple thoughts per step, creating a tree structure. The search process can be BFS (breadth-first search) or DFS (depth-first search) with each state evaluated by a classifier (via a prompt) or majority vote.'
+                )
+            ]
+        ),
+        
+    AIMessage(
+        content=[
+            {
+                'type': 'text', 
+                
+                'text': '**Task decomposition** is a planning technique used to break down complex tasks into smaller, simpler, and more manageable steps. This process allows an autonomous agent (like an LLM-powered agent) to plan ahead and tackle complicated problems more effectively.\n\nKey aspects of task decomposition include:\n\n### 1. Methods of Decomposition\nDecomposition can be achieved in several ways:\n*   **Simple Prompting:** Using instructions like "Steps for XYZ" or "What are the subgoals for achieving XYZ?" to guide the model.\n*   **Task-Specific Instructions:** Providing specific guidance for a particular type of task (e.g., "Write a story outline" for the task of writing a novel).\n*   **Human Input:** Incorporating direct feedback or guidance from a human to define the necessary steps.\n\n### 2. Common Techniques\nSeveral established prompting techniques rely on task decomposition:\n*   **Chain of Thought (CoT):** Instructs the model to "think step by step," transforming a large task into a sequence of smaller, logical reasoning steps.\n*   **Tree of Thoughts (ToT):** Extends CoT by exploring multiple reasoning possibilities at each step, creating a tree structure of potential paths and evaluating them to find the best solution.\n*   **LLM+P:** An approach where the LLM translates a problem into a formal planning language (like PDDL) and "outsources" the actual planning to an external classical planner.\n\n### 3. Why it Matters\nFor AI agents, task decomposition is essential because complex tasks often involve many steps that are difficult to process all at once. By breaking them down, the agent can:\n*   Utilize more "test-time computation" to focus on one sub-problem at a time.\n*   Provide a more interpretable "thinking process" for users.\n*   Manage long-horizon tasks that require significant foresight.', 
+                
+                'extras': {
+                    'signature': 'EsYECsMEAXLI2nz4pkYql4DC+JYMUpwn+Vcs3sDc2GRvL/SgXwUj9IXBHvGFNvPbLs8Lme8N3dERbHHm8ANt1ZsNV0AKZVjzjWqfUoixJo0Cgy/eAlh/I53L6GEwMRvMO+EBwGhXvh/cqlOlNEf+Jg8+jDsZzx9Kr+CwAew+YkFeeIkLLkPLyGWbJYkU6ugcIlvj512rv9i3lJgp3Ts+Y799FFa+IJkC/GxwxuZE/af8guooXyPSeIx8V3i9tvjArQYMsqxl1Y44MydK7VycwR8V5R8reCaSRyivH3S6xS9A5aNHZFiQodgabktYdkn7QQdlt0cpwIfmbvOAfWYCBjB26pxSNeMClZU5NXzAyfy8tJBuaJlLehgibZKepUQLEGM1ebdmpdzdI+WN4apSzmykvbRxYbsuMcQs6uS6mtWjei8PLJXd7mH6h6rvxoPNndBrkVBUoj6SwRIShOcPkTUw4rhMqa1dqeZKp3w8n7on665w0Vfhelq54kZldPy/ClkmeqGSb7BPa6MD8ITfflulZBb9mfKT1lzg71mBixkGF0bqWW81dE+rjMvxCGQqSpwXQK7qyFVJI3qFv+ON7IL62lLdtmyNB371nze+oz0DzGdL7QLkgcjO9lXWSYZA7mrmExJNn1jRC1iUxqCcdCbBW7Jx+5LyR2lvTiYZy3UyEnh7ZOsr2BnGLCxK+e9tMWuiTuXkExwhNGI2YT0Mv3BwBPQwv/1237eW1fOV1FXy+UX+mXHFI8s0DOzPiZbhcggs3xBYFIw1'
+                    }
+                }
+            ], 
+            
+            additional_kwargs={}, 
+            response_metadata={
+                'finish_reason': 'STOP', 
+                'model_name': 'gemini-3-flash-preview', 
+                'safety_ratings': [], 
+                'model_provider': 'google_genai'
+                }, 
+                
+                id='lc_run--019bb1a6-a8fb-7e12-87d6-41c4ca4a887b-0', 
+                tool_calls=[], 
+                invalid_tool_calls=[], 
+                usage_metadata={'input_tokens': 707, 'output_tokens': 518, 'total_tokens': 1225,'input_token_details': {'cache_read': 0}, 
+                'output_token_details': {'reasoning': 121}
+            }
+        )
+    ]
+}
